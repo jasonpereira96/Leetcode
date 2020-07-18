@@ -1,0 +1,7 @@
+DP
+
+Any DP problem first needs a recurrence relation!
+Then and then only proceed
+
+Technically every problem is recursive - but DP can only be used on those problems where the 
+SOLUTION of the smaller problem is helpful/relavent to solving the bigger one

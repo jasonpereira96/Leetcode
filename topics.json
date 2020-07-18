@@ -1,0 +1,13 @@
+{
+    "graphs": {
+        "topics": ["dfs", "bfs", "dag", "topological sorting"],
+        "dfs": ["back edges"],
+        "bfs": ["cross edges"],
+        "IMPORTANT" :"Implementation of dfs and bfs",
+        "topological_sort": ["how to do it?", "applications", "dfs algo for doing it"],
+        "grapch coloring": ["how to do it", "bipartite"]
+    },
+    "dp": {
+        "topics": ["minimax"]
+    }    
+}
