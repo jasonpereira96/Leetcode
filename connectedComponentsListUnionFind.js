@@ -1,16 +1,10 @@
 class DisjointSet {
-    /**
-     * 
-     * @param {number} n Number of nodes
-     */
     constructor(n) {
         this.parents = new Array(n).fill(-1);
     }
-
     /**
      * Returns the representative value of the set which x belongs to
      * @param {number} x 
-     * @returns {number}
      */
     find(x) {
         //the parent value is negative, so it itself must be the representative
@@ -21,7 +15,6 @@ class DisjointSet {
         this.parents[x] = representative;
         return representative;
     }
-
     /**
      * Performs union of the sets of x and y
      * @param {number} x 
@@ -43,21 +36,15 @@ class DisjointSet {
             this.parents[yRoot] += temp;
         }
     }
-
     /**
-     * Returns whether the elements x and y are in the same set
+     * Returns whether the x and y are in the same set
      * @param {number} x 
      * @param {number} y 
-     * @returns {boolean} Returns whether the elements x and y are in the same set
+     * @returns {boolean}
      */
     isConnected(x, y) {
         return this.find(x) === this.find(y);
     }
-
-    /**
-     * Returns the number of individual disjoint sets (connected components)
-     * @returns {number}
-     */
     count() {
         return this.parents.reduce((acc, val) => {
             return (val < 0) ? acc + 1 : acc;
@@ -66,26 +53,51 @@ class DisjointSet {
 }
 
 /**
- * Implementation based on Abdul Bari's video. (https://www.youtube.com/watch?v=wU6udHRIkcc)
- * He used union by weight and path compression to improve find()/union() efficiency
+ * This is an efficient way to find which are the INDIVIDUAL NODES IN EACH CONNECTED COMPONENT of the Union-Find
+ * data structure. (DSU)
+ * The logic is such that once all nodes are added to the DSU and no more union() operations will be performed, then
+ * the representative of each element is now fixed. Since only the union() operation changes the representative (union by weight)
+ * 
+ * So now we can maintain as HashMap of representative -> List of nodes
+ * 
+ * Call the find() operation for each node, and get the representative of it.
+ * Add it to its respective list in the hashmap. (If there is no list of this representative, make a new list) 
  */
 
-var disjointSet = new DisjointSet(8);
-console.log(disjointSet.find(2));
-console.log(disjointSet.isConnected(2, 3));
-console.log(disjointSet.isConnected(3, 3));
-console.log(disjointSet.isConnected(5, 3));
-disjointSet.union(0, 1);
-disjointSet.union(0, 1);
-disjointSet.union(2, 1);
-disjointSet.union(3, 1);
-disjointSet.union(2, 3);
+const NUM_NODES = 10;
+var disjointSet = new DisjointSet(NUM_NODES);
 
-console.log(disjointSet.isConnected(0, 1));
-console.log(disjointSet.isConnected(1, 1));
-console.log(disjointSet.isConnected(5, 1));
-console.log(disjointSet.isConnected(6, 1));
-console.log(disjointSet.isConnected(3, 2));
+var edges = [
+    [0, 1],
+    [1, 2],
+    [4, 5],
+    [6, 7],
+    [8, 9],
+    [0, 9]
+];
 
+for (var edge of edges) {
+    var [node1, node2] = edge;
+    disjointSet.union(node1, node2);
+}
 
+var connectedComponents = {};
+for (var node = 0; node < NUM_NODES; node++) {
+    var representative = disjointSet.find(node);
+    if (connectedComponents[representative] === undefined) {
+        connectedComponents[representative] = [];
+    }
+    connectedComponents[representative].push(node);
+}
 
+console.log(connectedComponents);
+
+/*
+Output: 
+{
+    1: [0, 1, 2, 8, 9]
+    3: [3]
+    5: [4, 5]
+    7: [6, 7]
+}
+*/
