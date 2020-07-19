@@ -55,9 +55,10 @@ class DisjointSet {
 /**
  * This is an efficient way to find which are the INDIVIDUAL NODES IN EACH CONNECTED COMPONENT of the Union-Find
  * data structure. (DSU)
- * The logic is such that once all nodes are added to the DSU and no more union() operations will be performed, then
- * the representative of each element is now fixed. Since only the union() operation changes the representative (union by weight)
+ * The logic is such that once we reach a stage where no more union() operations will be performed on the DSU, then
+ * the representative of each element is NOW FIXED. Since only the union() operation changes the representative (union by weight).
  * 
+ * Algorithm:
  * So now we can maintain as HashMap of representative -> List of nodes
  * 
  * Call the find() operation for each node, and get the representative of it.
