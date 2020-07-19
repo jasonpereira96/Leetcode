@@ -45,24 +45,29 @@ class DisjointSet {
     isConnected(x, y) {
         return this.find(x) === this.find(y);
     }
+    count() {
+        return this.parents.reduce((acc, val) => {
+            return (val < 0) ? acc + 1 : acc;
+        }, 0);
+    }
 }
 
 var disjointSet = new DisjointSet(8);
 console.log(disjointSet.find(2));
-console.log(disjointSet.isConnected(2,3));
-console.log(disjointSet.isConnected(3,3));
-console.log(disjointSet.isConnected(5,3));
-disjointSet.union(0,1);
-disjointSet.union(0,1);
-disjointSet.union(2,1);
-disjointSet.union(3,1);
-disjointSet.union(2,3);
+console.log(disjointSet.isConnected(2, 3));
+console.log(disjointSet.isConnected(3, 3));
+console.log(disjointSet.isConnected(5, 3));
+disjointSet.union(0, 1);
+disjointSet.union(0, 1);
+disjointSet.union(2, 1);
+disjointSet.union(3, 1);
+disjointSet.union(2, 3);
 
-console.log(disjointSet.isConnected(0,1));
-console.log(disjointSet.isConnected(1,1));
-console.log(disjointSet.isConnected(5,1));
-console.log(disjointSet.isConnected(6,1));
-console.log(disjointSet.isConnected(3,2));
+console.log(disjointSet.isConnected(0, 1));
+console.log(disjointSet.isConnected(1, 1));
+console.log(disjointSet.isConnected(5, 1));
+console.log(disjointSet.isConnected(6, 1));
+console.log(disjointSet.isConnected(3, 2));
 
 
 
