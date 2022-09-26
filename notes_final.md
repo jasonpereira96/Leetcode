@@ -15,6 +15,12 @@ For the graph to be a valid tree, it must have exactly n - 1 edges. Any less, an
 
 These facts are fairly straightforward to prove. We won't go into why they are true here, but if you're not familiar with these facts, then we recommend reading up on graph theory. It is very important to be confident with graph theory in-order to pass the interviews at a top tech company.
 
+### Important Algorithms
+- BFS
+- DFS
+- Dijikstras
+- Kruskals
+
 # Union Find
 
 ### How to keep track of the number of groups(islands) in a union find externally.
@@ -31,4 +37,40 @@ for (const [from, to] of edges) {
     } 
 }
 // at the end islandsCount is the number of groups
+```
+
+### Quicksort
+- Quicksort 
+- Quickselect (comes up often in as a solution to many questions)
+
+### Mergesort
+- mergesort (ratta)
+
+### Heap
+- Implementation of Heap
+- bubbling algorithms
+- `K` problems
+
+### Tries
+- Implementation
+
+```javascript
+class TrieNode {
+    constructor() {
+        this.letters = {}; //  or an array of length 26
+        this.isWord = false;
+        this.word = null // we can actually store the whole word on the nodes which have words
+        // this is a neat trick is we need to look up words quickly
+    }
+}
+```
+
+### Bit Manip
+
+- Remember the propoerties of XOR-
+- XOR is commutative, etc...
+- https://leetcode.com/problems/single-number/
+- XOR trick => https://florian.github.io/xor-trick/
+```
+x ^ x = 0;
 ```
