@@ -1,3 +1,4 @@
+- Linked in bio
 # Tree
 
 An inorder traversal of a BST gives its nodes in sorted order.
@@ -65,12 +66,51 @@ class TrieNode {
 }
 ```
 
+### Tree
+- 3 facts about BST: https://leetcode.com/problems/delete-node-in-a-bst/solution/
+
 ### Bit Manip
 
 - Remember the propoerties of XOR-
 - XOR is commutative, etc...
 - https://leetcode.com/problems/single-number/
-- XOR trick => https://florian.github.io/xor-trick/
+- XOR tricks => https://florian.github.io/xor-trick/
 ```
 x ^ x = 0;
 ```
+
+Here is an interview tip for bit manipulation problems: if you don't know how to start, start from computing XOR for your input data. Strangely, that helps out for quite a lot of problems, Single Number II, Single Number III, Maximum XOR of Two Numbers in an Array, Repeated DNA Sequences, Maximum Product of Word Lengths, etc.
+
+- Anding the two numbers n and n - 1 always flips the least significant 11-bit in nn to 00, and keeps all other bits the same.
+- swap alternating bits of a number
+- converting endianness of a number
+
+https://www.techinterviewhandbook.org/algorithms/binary/
+
+- one's complement
+- two's complement
+
+### DP
+
+#### 0/1 Knapsack
+- The maximum obtainable value by including item i is thus = the value of item i itself + the maximum value that can be obtained with the remaining capacity of the knapsack. 
+
+`DP[i, w] = max(DP[i-1, w], P[i] + DP[i-1, w - W[i]])`
+
+
+# Resume
+ - https://www.reddit.com/r/cscareerquestions/wiki/faq_resumes/
+
+ 
+### References
+
+- LinkedIn Bio: https://www.linkedin.com/in/divyank-shukla/
+- LinkedIn Bio: https://www.linkedin.com/in/gurleen-k/
+- Venky
+
+
+### System Design
+- https://github.com/coding-parrot/Low-Level-Design
+
+#### Message
+https://www.linkedin.com/in/ansulgoenka/
