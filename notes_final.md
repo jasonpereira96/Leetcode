@@ -21,6 +21,10 @@ These facts are fairly straightforward to prove. We won't go into why they are t
 - DFS
 - Dijikstras
 - Kruskals
+- A*
+-  Lomuto's partition algorithm
+-  Hoare's partition algorithm
+- Quickselect
 
 # Union Find
 
@@ -47,10 +51,20 @@ for (const [from, to] of edges) {
 ### Mergesort
 - mergesort (ratta)
 
+### Hashtable
+- understand all of the different collision mitigation mechanisms, understand what amortized constant-time means
+### Linked Hash Map
+
 ### Heap
 - Implementation of Heap
 - bubbling algorithms
 - `K` problems
+#### Heap Patterns
+- https://leetcode.com/discuss/general-discussion/1127238/master-heap-by-solving-23-questions-in-4-patterns-category
+- Top K Pattern
+- Merge K sorted pattern
+- Two Heaps Pattern
+- Minimum number Pattern
 
 ### Tries
 - Implementation
@@ -69,8 +83,11 @@ class TrieNode {
 ### Tree
 - 3 facts about BST: https://leetcode.com/problems/delete-node-in-a-bst/solution/
 
+
 ### Bit Manip
 
+- write a method to determine if the bit-wise representation of an integer is a palindrome
+- Little Endian / big Endian
 - Remember the propoerties of XOR-
 - XOR is commutative, etc...
 - https://leetcode.com/problems/single-number/
@@ -98,15 +115,38 @@ https://www.techinterviewhandbook.org/algorithms/binary/
 `DP[i, w] = max(DP[i-1, w], P[i] + DP[i-1, w - W[i]])`
 
 
+### Networking
+- Sockets
+- TCP/IP
+- network Layers
+- You should know what HTTP actually is. Learn your networking layers and what's responsible for what You don't need to know all of the details of the protocols, but you should know some of them and that they exist. This sounds daunting, it should only take a couple of hours.
+
+### Testing
+- TDD
+
+
 # Resume
  - https://www.reddit.com/r/cscareerquestions/wiki/faq_resumes/
 
- 
+
 ### References
 
 - LinkedIn Bio: https://www.linkedin.com/in/divyank-shukla/
 - LinkedIn Bio: https://www.linkedin.com/in/gurleen-k/
 - Venky
+- https://i.redd.it/geoorvfwwhx81.png
+- https://imgur.com/a/0MTmvgA
+- https://i.redd.it/cqfjfde0q3w71.png
+- https://www.reddit.com/r/EngineeringResumes/wiki/index/
+- https://www.linkedin.com/posts/diegogranadosh_prouctmanagement-resume-activity-6986355775677882368-Bsmo?utm_source=share&utm_medium=member_android
+- http://www.evykassirer.com/resume
+- Angela Xu
+
+
+### Articles
+- How to prep for tech interview: https://www.reddit.com/r/cscareerquestions/comments/1jov24/heres_how_to_prepare_for_tech_interviews/
+- https://www.reddit.com/r/cscareerquestions/comments/n5spv/getting_a_job_in_software_development_a_reddit/
+- http://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html
 
 
 ### System Design
@@ -114,3 +154,16 @@ https://www.techinterviewhandbook.org/algorithms/binary/
 
 #### Message
 https://www.linkedin.com/in/ansulgoenka/
+
+### Recruiters
+- https://www.linkedin.com/in/madeleine-lorraine?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAA-P--8BPlQn-DYfDhOH1hnzNpUw0OfVZpA&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people_load_more%3BuJhYNHyEQL%2BncErk%2BTy8Pg%3D%3D
+- https://www.linkedin.com/in/kayleighbottini?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAp4EosB8WTiLMbK-hSDQa7V9WxerbfUeQQ&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people_load_more%3BRVA8KPVSQAGBl1aM58yMUg%3D%3D
+- https://www.linkedin.com/in/oliviablack?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABqA4SkBinhP-8Dbci2pSSJMrqAsuIbSg2Q&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people_load_more%3BRVA8KPVSQAGBl1aM58yMUg%3D%3D
+
+### Messages to write
+- to a SDE for jobs
+- to a recruiter
+
+
+### Burnout
+- https://index.medium.com/reflections-on-burnout-bea0ebf87b9
